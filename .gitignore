@@ -1,0 +1,16 @@
+# Environments
+.env
+.env.*
+!.env.example
+
+# Python / Backend
+backend/.venv/
+backend/__pycache__/
+backend/*.db
+backend/*.db-*
+*.pyc
+
+# Node / Frontend (frontend has its own, but good to add)
+node_modules/
+dist/
+.DS_Store

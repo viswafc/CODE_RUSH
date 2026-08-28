@@ -59,7 +59,7 @@ export default function Round1() {
 
   // WebSocket for dynamic config updates
   useEffect(() => {
-    const ws = new WebSocket(`ws://${window.location.host}/ws/leaderboard`);
+    const ws = new WebSocket(api.getWsUrl('/leaderboard'));
     
     ws.onmessage = async (event) => {
       try {

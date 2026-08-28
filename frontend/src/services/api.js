@@ -1,6 +1,6 @@
 /** API service — all backend communication goes through here. */
 
-const API_BASE = '/api';
+const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
 class ApiError extends Error {
   constructor(message, status) {
@@ -15,6 +15,11 @@ function getToken() {
 
 function getAdminToken() {
   return localStorage.getItem('admin_token');
+}
+
+export function getWsUrl(path) {
+  const wsBase = import.meta.env.VITE_WS_URL || `ws://${window.location.host}/ws`;
+  return `${wsBase}${path}`;
 }
 
 async function request(url, options = {}) {

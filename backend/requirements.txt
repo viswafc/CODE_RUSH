@@ -10,3 +10,4 @@ pydantic
 pydantic-settings
 python-multipart
 aiofiles
+psycopg2-binary
